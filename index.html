@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mainpage</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- 탑바 -->
+    <header>
+      <div class="container">
+        <!-- 왼쪽박스 -->
+        <div class="top-bar__left-box">
+          <!-- 로고 -->
+          <h1>
+            <button title="메인 바로가기" class="logo-link">
+              <a href="#"
+                ><img
+                  src="https://i.postimg.cc/ydv1Q2Wt/car-poor-logo-img-black.png"
+                  alt=""
+              /></a>
+            </button>
+          </h1>
+        </div>
+
+        <!-- 오른쪽 박스 -->
+        <div class="top-bar__right-box">
+          <!-- 아이콘 -->
+          <div class="icon-box">
+            <!-- 1 -->
+            <!-- 검색창 -->
+            <a href="#">
+              <a href="#"
+                ><img
+                  src="https://i.postimg.cc/FHsr5pS7/free-icon-search.png"
+                  alt=""
+              /></a>
+            </a>
+            <!-- 2 -->
+            <!-- 로그인 -->
+            <a href="#"
+              ><img
+                src="https://i.postimg.cc/1RHr5RT4/free-icon-user.png"
+                alt=""
+            /></a>
+          </div>
+
+          <!-- 전체메뉴바 -->
+          <div class="all-menubar">
+            <div class="all-menubar-hover">
+              <a href="#"
+                ><img
+                  src="https://i.postimg.cc/3wRP9bvF/free-icon-menu.png"
+                  alt="전체메뉴바"
+              /></a>
+            </div>
+            <!-- 3차메뉴 -->
+            <nav>
+              <div class="menu-3">
+                <div class="container">
+                  <form id="myForm" action="/car/list/hyundai" method="post">
+                    <ul>
+                      <!-- (li>a[href="#"]{Our Stories})*4 -->
+                      <li>
+                        <a href="#"><p class="tit">Car Brand</p></a>
+                      </li>
+                      <li>
+                        <input
+                          id="brand1"
+                          type="checkbox"
+                          name="brand"
+                          value="현대"
+                        />
+                        <label for="brand1">현대</label>
+                      </li>
+                      <li>
+                        <input
+                          id="brand2"
+                          type="checkbox"
+                          name="brand"
+                          value="기아"
+                        />
+                        <label for="brand2">기아</label>
+                      </li>
+                    </ul>
+                    <script>
+                      // 모든 체크박스 요소
+                      const checkboxes = document.querySelectorAll(
+                        'input[name="brand"]'
+                      );
+
+                      // 각 체크박스에 대한 이벤트 리스너
+                      checkboxes.forEach((checkbox) => {
+                        checkbox.addEventListener("change", function () {
+                          // 체크박스의 형제 레이블
+                          const label = this.nextElementSibling;
+
+                          // 체크박스가 체크되었는지 확인하고 레이블의 색상을 변경
+                          if (this.checked) {
+                            label.style.color = "gray"; // 체크되었을 때 파란색으로 변경
+                          } else {
+                            label.style.color = "black"; // 체크 해제되었을 때 검은색으로 변경
+                          }
+                        });
+                      });
+                    </script>
+                    <ul>
+                      <li>
+                        <a href="#"><p class="tit">Vehicle Size</p></a>
+                      </li>
+                      <li>
+                        <input
+                          id="size1"
+                          type="checkbox"
+                          name="size"
+                          value="소형"
+                        />
+                        <label for="size1">소형</label>
+                      </li>
+                      <li>
+                        <input
+                          id="size2"
+                          type="checkbox"
+                          name="size"
+                          value="중형"
+                        />
+                        <label for="size2">중형</label>
+                      </li>
+                      <li>
+                        <input
+                          id="size3"
+                          type="checkbox"
+                          name="size"
+                          value="대형"
+                        />
+                        <label for="size3">대형</label>
+                      </li>
+                      <li>
+                        <input
+                          id="size4"
+                          type="checkbox"
+                          name="size"
+                          value="소형SUV"
+                        />
+                        <label for="size4">소형SUV</label>
+                      </li>
+                      <li>
+                        <input
+                          id="size5"
+                          type="checkbox"
+                          name="size"
+                          value="대형SUV"
+                        />
+                        <label for="size5">대형SUV</label>
+                      </li>
+                    </ul>
+                    <script>
+                      // 모든 체크박스 요소
+                      const checkboxes2 =
+                        document.querySelectorAll('input[name="size"]');
+
+                      // 각 체크박스에 대한 이벤트 리스너를 등록
+                      checkboxes2.forEach((checkbox) => {
+                        checkbox.addEventListener("change", function () {
+                          // 체크박스의 형제 레이블
+                          const label = this.nextElementSibling;
+
+                          // 체크박스가 체크되었는지 확인하고 레이블의 색상을 변경
+                          if (this.checked) {
+                            label.style.color = "blue"; // 체크되었을 때 파란색으로 변경
+                          } else {
+                            label.style.color = "black"; // 체크 해제되었을 때 검은색으로 변경
+                          }
+                        });
+                      });
+                    </script>
+                    <ul>
+                      <li>
+                        <a href="#"><p class="tit">Engine</p> </a>
+                      </li>
+                      <li>
+                        <input
+                          id="engine1"
+                          type="checkbox"
+                          name="engine"
+                          value="가솔린"
+                          onclick="checkOnlyOne2(this)"
+                        />
+                        <label for="engine1">가솔린</label>
+                      </li>
+                      <li>
+                        <input
+                          id="engine2"
+                          type="checkbox"
+                          name="engine"
+                          value="디젤"
+                          onclick="checkOnlyOne2(this)"
+                        />
+                        <label for="engine2">디젤</label>
+                      </li>
+                      <li>
+                        <input
+                          id="engine3"
+                          type="checkbox"
+                          name="engine"
+                          value="하이브리드"
+                          onclick="checkOnlyOne2(this)"
+                        />
+                        <label for="engine3">하이브리드</label>
+                      </li>
+                      <li>
+                        <input
+                          id="engine4"
+                          type="checkbox"
+                          name="engine"
+                          value="LPG"
+                          onclick="checkOnlyOne2(this)"
+                        />
+                        <label for="engine4">LPG</label>
+                      </li>
+                      <li>
+                        <input
+                          id="engine5"
+                          type="checkbox"
+                          name="engine"
+                          value="전기차"
+                          onclick="checkOnlyOne2(this)"
+                        />
+                        <label for="engine5">전기차</label>
+                      </li>
+                    </ul>
+                    <script>
+                      function checkOnlyOne2(element) {
+                        const checkboxes = document.getElementsByName("engine");
+
+                        checkboxes.forEach((cb) => {
+                          if (cb !== element) {
+                            cb.checked = false;
+                            // 체크가 해제되면 레이블의 색상을 검은색으로 변경
+                            const label = cb.nextElementSibling;
+                            label.style.color = "black";
+                          }
+                        });
+
+                        // 체크 상태를 업데이트한 후, 현재 체크된 checkbox의 레이블 색상을 파란색으로 변경
+                        const label = element.nextElementSibling;
+                        if (element.checked) {
+                          label.style.color = "blue";
+                        } else {
+                          label.style.color = "black";
+                        }
+                      }
+                    </script>
+                    <ul>
+                      <li>
+                        <a href="#"
+                          ><p class="tit">
+                            Displacement <br />
+                            Volume(cc)
+                          </p>
+                        </a>
+                      </li>
+                      <li>
+                        <input
+                          id="displacement1"
+                          type="checkbox"
+                          name="displacement"
+                          value="1500"
+                          onclick="checkOnlyOne3(this)"
+                        />
+                        <label for="displacement1">1500cc 이하</label>
+                      </li>
+                      <li>
+                        <input
+                          id="displacement2"
+                          type="checkbox"
+                          name="displacement"
+                          value="2000"
+                          onclick="checkOnlyOne3(this)"
+                        />
+                        <label for="displacement2">2000cc 이하</label>
+                      </li>
+                      <li>
+                        <input
+                          id="displacement3"
+                          type="checkbox"
+                          name="displacement"
+                          value="3000"
+                          onclick="checkOnlyOne3(this)"
+                        />
+                        <label for="displacement3">3000cc 이하</label>
+                      </li>
+                    </ul>
+                    <script>
+                      function checkOnlyOne3(element) {
+                        const checkboxes =
+                          document.getElementsByName("displacement");
+
+                        checkboxes.forEach((cb) => {
+                          if (cb !== element) {
+                            cb.checked = false;
+                            // 체크가 해제되면 레이블의 색상을 검은색으로 변경
+                            const label = cb.nextElementSibling;
+                            label.style.color = "black";
+                          }
+                        });
+
+                        // 체크 상태를 업데이트한 후, 현재 체크된 checkbox의 레이블 색상을 파란색으로 변경
+                        const label = element.nextElementSibling;
+                        if (element.checked) {
+                          label.style.color = "blue";
+                        } else {
+                          label.style.color = "black";
+                        }
+                      }
+                    </script>
+                  </form>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
